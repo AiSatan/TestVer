@@ -12,14 +12,15 @@ namespace TestDll
 	    public async void Start(string str)
 	    {  
 			Console.WriteLine("DLL: " + str + " NET: " + Environment.Version);
-			await new Task(Test);
+			await Task.Run(new Action(Test));
+			Console.WriteLine("Runing.. DLL: " + str + " NET: " + Environment.Version);
 	    }
 
 	    private void Test()
 	    {
-
 			Console.WriteLine("In Thread! NET: " + Environment.Version);
-			Thread.Sleep(1000);
+			Thread.Sleep(5000);
+			Console.WriteLine("In Thread! End Sleep! NET: " + Environment.Version);
 	    }
     }
 }

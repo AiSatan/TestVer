@@ -11,10 +11,10 @@ namespace ConsoleApplication1
 		static void Main(string[] args)
 		{
 			Console.WriteLine("EXE: " + "Work" + " NET: " + Environment.Version);
-			Assembly a = Assembly.LoadFile(@"C:\Users\Satan\Documents\visual studio 2013\Projects\Test_Flamework_ver\TestDll2\bin\Debug\TestDll2.dll"); // dll - "ClassLibrary3"
-			Type t = a.GetType("TestDll2.Wow2"); // namespace - "MyPlayers" , class - "Player"
+			Assembly a = Assembly.LoadFile(@"C:\Users\Satan\Documents\visual studio 2013\Projects\Test_Flamework_ver\TestDll\bin\Debug\TestDll.dll");
+			Type t = a.GetType("TestDll.Wow"); 
 			Object instance = Activator.CreateInstance(t);
-			MethodInfo m = t.GetMethod("Start"); // method
+			MethodInfo m = t.GetMethod("Start");
 			m.Invoke(instance, new object[] { "Work" });
 			Console.ReadLine();
 		}
